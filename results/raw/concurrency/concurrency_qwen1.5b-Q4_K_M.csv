@@ -1,0 +1,5 @@
+﻿Concurrency,Wall_Time_s,Avg_Latency_s,Throughput_tok_s
+1,3.578,3.576,35.78
+2,4.167,4.154,61.43
+4,4.612,4.598,111.0
+8,9.11,6.823,112.4

@@ -1,0 +1,4 @@
+model,concurrency,mean_throughput_tok_s,stdev_tok_s,theoretical_linear_tok_s,efficiency_percent,repeats,n_predict,n_prompt
+qwen1.5b-Q4_K_M,1,31.1013,2.049,31.1013,100,3,128,128
+qwen1.5b-Q4_K_M,2,54.0694,0.0089,62.2025,86.92,3,128,128
+qwen1.5b-Q4_K_M,4,89.5536,5.1835,124.4051,71.99,3,128,128

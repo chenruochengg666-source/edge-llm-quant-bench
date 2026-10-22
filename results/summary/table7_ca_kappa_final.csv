@@ -1,0 +1,10 @@
+﻿Model,Quant,Total_Questions,FP16_Accuracy,Quant_Accuracy,Correctness_Agreement,Cohen_Kappa
+qwen1.5b,Q2_K,120,0.1333,0.025,0.0,-0.044
+qwen1.5b,Q3_K_M,120,0.1333,0.075,0.0417,0.3363
+qwen1.5b,Q4_K_M,120,0.1333,0.125,0.0667,0.4444
+qwen3b,Q2_K,120,0.0,0.0,0.0,N/A
+qwen3b,Q4_K_M,120,0.0,0.0083,0.0,N/A
+phi3,Q2_K,120,0.0,0.0,0.0,N/A
+phi3,Q4_K_M,120,0.0,0.0,0.0,N/A
+ll32,Q2_K,120,0.0,0.0167,0.0,N/A
+ll32,Q4_K_M,120,0.0,0.05,0.0,N/A

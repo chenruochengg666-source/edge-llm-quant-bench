@@ -1,0 +1,17 @@
+# 忽略前端和 IDE 依赖 / 缓存
+node_modules/
+.hvigor/
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# 忽略大模型文件
+*.gguf
+*.safetensors
+*.bin
+*.kld
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db

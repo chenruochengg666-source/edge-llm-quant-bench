@@ -1,0 +1,120 @@
+{"id": "seq_01", "level": "4step", "question": "一列数的规律是：7, 9, 11, 13, 15。请问下一个数是多少？只输出数字。", "gold": "17", "pred": "", "raw": ""}
+{"id": "3step_12", "level": "3step", "question": "D大于E，C大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>D>E", "pred": "", "raw": ""}
+{"id": "2step_14", "level": "2step", "question": "F大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>D", "pred": "", "raw": ""}
+{"id": "4step_10", "level": "4step", "question": "E大于B，D大于E，A大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>D>E>B", "pred": "", "raw": ""}
+{"id": "2step_23", "level": "2step", "question": "A大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>B", "pred": "", "raw": ""}
+{"id": "2step_08", "level": "2step", "question": "E大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>D", "pred": "", "raw": ""}
+{"id": "seq_09", "level": "4step", "question": "一列数的规律是：10, 15, 20, 25, 30。请问下一个数是多少？只输出数字。", "gold": "35", "pred": "", "raw": ""}
+{"id": "4step_01", "level": "4step", "question": "E大于C，C大于D，B大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>E>C>D", "pred": "", "raw": ""}
+{"id": "seq_08", "level": "4step", "question": "一列数的规律是：10, 14, 18, 22, 26。请问下一个数是多少？只输出数字。", "gold": "30", "pred": "", "raw": ""}
+{"id": "seq_11", "level": "5step+", "question": "一列数的规律是：6, 10, 14, 18, 22。请问下一个数是多少？只输出数字。", "gold": "26", "pred": "", "raw": ""}
+{"id": "2step_17", "level": "2step", "question": "C大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>D", "pred": "", "raw": ""}
+{"id": "4step_15", "level": "4step", "question": "B大于F，F大于E，D大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>B>F>E", "pred": "", "raw": ""}
+{"id": "5step+_13", "level": "5step+", "question": "D大于C，C大于E，A大于B，E大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>C>E>A>B", "pred": "", "raw": ""}
+{"id": "3step_25", "level": "3step", "question": "D大于E，E大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>E>A", "pred": "", "raw": ""}
+{"id": "3step_01", "level": "3step", "question": "E大于C，C大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>C>B", "pred": "", "raw": ""}
+{"id": "5step+_03", "level": "5step+", "question": "A大于E，D大于B，E大于D，B大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>E>D>B>F", "pred": "", "raw": ""}
+{"id": "2step_10", "level": "2step", "question": "D大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>B", "pred": "", "raw": ""}
+{"id": "2step_21", "level": "2step", "question": "A大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F", "pred": "", "raw": ""}
+{"id": "2step_05", "level": "2step", "question": "B大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>D", "pred": "", "raw": ""}
+{"id": "4step_24", "level": "4step", "question": "B大于F，E大于D，F大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>F>E>D", "pred": "", "raw": ""}
+{"id": "3step_17", "level": "3step", "question": "A大于E，E大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>E>B", "pred": "", "raw": ""}
+{"id": "seq_17", "level": "5step+", "question": "一列数的规律是：7, 10, 13, 16, 19。请问下一个数是多少？只输出数字。", "gold": "22", "pred": "", "raw": ""}
+{"id": "3step_02", "level": "3step", "question": "B大于D，D大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>D>F", "pred": "", "raw": ""}
+{"id": "5step+_07", "level": "5step+", "question": "A大于B，B大于F，C大于A，E大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>C>A>B>F", "pred": "", "raw": ""}
+{"id": "3step_19", "level": "3step", "question": "D大于F，C大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>D>F", "pred": "", "raw": ""}
+{"id": "5step+_05", "level": "5step+", "question": "C大于B，F大于C，E大于D，D大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>D>F>C>B", "pred": "", "raw": ""}
+{"id": "4step_20", "level": "4step", "question": "D大于F，E大于C，C大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>C>D>F", "pred": "", "raw": ""}
+{"id": "4step_16", "level": "4step", "question": "B大于D，E大于B，D大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>B>D>C", "pred": "", "raw": ""}
+{"id": "5step+_01", "level": "5step+", "question": "F大于B，A大于F，D大于C，B大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F>B>D>C", "pred": "", "raw": ""}
+{"id": "seq_14", "level": "5step+", "question": "一列数的规律是：5, 10, 15, 20, 25。请问下一个数是多少？只输出数字。", "gold": "30", "pred": "", "raw": ""}
+{"id": "2step_06", "level": "2step", "question": "C大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>B", "pred": "", "raw": ""}
+{"id": "2step_22", "level": "2step", "question": "E大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>D", "pred": "", "raw": ""}
+{"id": "5step+_19", "level": "5step+", "question": "A大于F，E大于D，F大于E，D大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F>E>D>B", "pred": "", "raw": ""}
+{"id": "5step+_24", "level": "5step+", "question": "A大于B，D大于E，B大于D，F大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>A>B>D>E", "pred": "", "raw": ""}
+{"id": "seq_04", "level": "4step", "question": "一列数的规律是：9, 11, 13, 15, 17。请问下一个数是多少？只输出数字。", "gold": "19", "pred": "", "raw": ""}
+{"id": "5step+_06", "level": "5step+", "question": "E大于C，A大于D，F大于A，C大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>C>F>A>D", "pred": "", "raw": ""}
+{"id": "5step+_11", "level": "5step+", "question": "E大于B，F大于A，A大于D，B大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>B>F>A>D", "pred": "", "raw": ""}
+{"id": "4step_07", "level": "4step", "question": "D大于A，E大于F，F大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>F>D>A", "pred": "", "raw": ""}
+{"id": "5step+_16", "level": "5step+", "question": "C大于B，E大于C，F大于E，A大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F>E>C>B", "pred": "", "raw": ""}
+{"id": "5step+_12", "level": "5step+", "question": "D大于A，B大于F，A大于E，F大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>F>D>A>E", "pred": "", "raw": ""}
+{"id": "4step_06", "level": "4step", "question": "B大于C，C大于D，D大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>C>D>A", "pred": "", "raw": ""}
+{"id": "4step_14", "level": "4step", "question": "E大于A，C大于D，D大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>D>E>A", "pred": "", "raw": ""}
+{"id": "2step_04", "level": "2step", "question": "B大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>C", "pred": "", "raw": ""}
+{"id": "5step+_22", "level": "5step+", "question": "E大于A，C大于D，D大于F，A大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>A>C>D>F", "pred": "", "raw": ""}
+{"id": "2step_18", "level": "2step", "question": "A大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F", "pred": "", "raw": ""}
+{"id": "2step_09", "level": "2step", "question": "C大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>B", "pred": "", "raw": ""}
+{"id": "seq_19", "level": "5step+", "question": "一列数的规律是：7, 11, 15, 19, 23。请问下一个数是多少？只输出数字。", "gold": "27", "pred": "", "raw": ""}
+{"id": "5step+_04", "level": "5step+", "question": "D大于B，C大于D，A大于C，E大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>A>C>D>B", "pred": "", "raw": ""}
+{"id": "2step_01", "level": "2step", "question": "D大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>B", "pred": "", "raw": ""}
+{"id": "2step_20", "level": "2step", "question": "E大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>D", "pred": "", "raw": ""}
+{"id": "5step+_21", "level": "5step+", "question": "C大于D，E大于A，D大于E，B大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>C>D>E>A", "pred": "", "raw": ""}
+{"id": "5step+_09", "level": "5step+", "question": "B大于C，F大于B，A大于F，C大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F>B>C>E", "pred": "", "raw": ""}
+{"id": "2step_15", "level": "2step", "question": "E大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>B", "pred": "", "raw": ""}
+{"id": "seq_05", "level": "4step", "question": "一列数的规律是：8, 12, 16, 20, 24。请问下一个数是多少？只输出数字。", "gold": "28", "pred": "", "raw": ""}
+{"id": "2step_13", "level": "2step", "question": "B大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>D", "pred": "", "raw": ""}
+{"id": "4step_04", "level": "4step", "question": "A大于F，D大于E，E大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>E>A>F", "pred": "", "raw": ""}
+{"id": "2step_07", "level": "2step", "question": "F大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>B", "pred": "", "raw": ""}
+{"id": "2step_19", "level": "2step", "question": "D大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>C", "pred": "", "raw": ""}
+{"id": "3step_14", "level": "3step", "question": "B大于D，D大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>D>E", "pred": "", "raw": ""}
+{"id": "3step_09", "level": "3step", "question": "D大于C，A大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>D>C", "pred": "", "raw": ""}
+{"id": "3step_24", "level": "3step", "question": "E大于B，A大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>E>B", "pred": "", "raw": ""}
+{"id": "5step+_20", "level": "5step+", "question": "F大于E，D大于A，B大于F，E大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>F>E>D>A", "pred": "", "raw": ""}
+{"id": "3step_22", "level": "3step", "question": "C大于E，A大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>C>E", "pred": "", "raw": ""}
+{"id": "seq_16", "level": "5step+", "question": "一列数的规律是：2, 7, 12, 17, 22。请问下一个数是多少？只输出数字。", "gold": "27", "pred": "", "raw": ""}
+{"id": "4step_12", "level": "4step", "question": "F大于D，D大于B，B大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>D>B>E", "pred": "", "raw": ""}
+{"id": "3step_03", "level": "3step", "question": "E大于B，D大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>E>B", "pred": "", "raw": ""}
+{"id": "seq_06", "level": "4step", "question": "一列数的规律是：9, 12, 15, 18, 21。请问下一个数是多少？只输出数字。", "gold": "24", "pred": "", "raw": ""}
+{"id": "2step_24", "level": "2step", "question": "A大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>D", "pred": "", "raw": ""}
+{"id": "4step_19", "level": "4step", "question": "F大于E，A大于C，C大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>C>F>E", "pred": "", "raw": ""}
+{"id": "4step_23", "level": "4step", "question": "E大于D，B大于A，A大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>A>E>D", "pred": "", "raw": ""}
+{"id": "3step_16", "level": "3step", "question": "C大于A，F大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>C>A", "pred": "", "raw": ""}
+{"id": "seq_12", "level": "5step+", "question": "一列数的规律是：5, 7, 9, 11, 13。请问下一个数是多少？只输出数字。", "gold": "15", "pred": "", "raw": ""}
+{"id": "2step_16", "level": "2step", "question": "E大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>A", "pred": "", "raw": ""}
+{"id": "3step_05", "level": "3step", "question": "D大于A，E大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>D>A", "pred": "", "raw": ""}
+{"id": "3step_08", "level": "3step", "question": "F大于D，C大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>F>D", "pred": "", "raw": ""}
+{"id": "seq_18", "level": "5step+", "question": "一列数的规律是：9, 12, 15, 18, 21。请问下一个数是多少？只输出数字。", "gold": "24", "pred": "", "raw": ""}
+{"id": "3step_10", "level": "3step", "question": "B大于F，F大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>F>A", "pred": "", "raw": ""}
+{"id": "4step_09", "level": "4step", "question": "E大于D，D大于B，C大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>E>D>B", "pred": "", "raw": ""}
+{"id": "3step_21", "level": "3step", "question": "C大于F，B大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>C>F", "pred": "", "raw": ""}
+{"id": "3step_18", "level": "3step", "question": "C大于B，B大于D。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>B>D", "pred": "", "raw": ""}
+{"id": "5step+_25", "level": "5step+", "question": "B大于D，D大于E，F大于C，E大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>D>E>F>C", "pred": "", "raw": ""}
+{"id": "4step_05", "level": "4step", "question": "B大于D，A大于B，E大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>A>B>D", "pred": "", "raw": ""}
+{"id": "3step_20", "level": "3step", "question": "A大于E，F大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>A>E", "pred": "", "raw": ""}
+{"id": "4step_18", "level": "4step", "question": "A大于C，E大于F，F大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>F>A>C", "pred": "", "raw": ""}
+{"id": "4step_21", "level": "4step", "question": "B大于E，E大于D，A大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>B>E>D", "pred": "", "raw": ""}
+{"id": "seq_02", "level": "4step", "question": "一列数的规律是：10, 14, 18, 22, 26。请问下一个数是多少？只输出数字。", "gold": "30", "pred": "", "raw": ""}
+{"id": "3step_23", "level": "3step", "question": "C大于E，E大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>E>F", "pred": "", "raw": ""}
+{"id": "4step_25", "level": "4step", "question": "B大于F，F大于D，D大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>F>D>E", "pred": "", "raw": ""}
+{"id": "5step+_10", "level": "5step+", "question": "F大于E，A大于F，E大于B，B大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>F>E>B>C", "pred": "", "raw": ""}
+{"id": "3step_15", "level": "3step", "question": "E大于A，A大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>A>C", "pred": "", "raw": ""}
+{"id": "3step_07", "level": "3step", "question": "E大于B，D大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>E>B", "pred": "", "raw": ""}
+{"id": "seq_03", "level": "4step", "question": "一列数的规律是：2, 7, 12, 17, 22。请问下一个数是多少？只输出数字。", "gold": "27", "pred": "", "raw": ""}
+{"id": "4step_02", "level": "4step", "question": "C大于E，F大于D，D大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>D>C>E", "pred": "", "raw": ""}
+{"id": "3step_04", "level": "3step", "question": "E大于F，B大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>E>F", "pred": "", "raw": ""}
+{"id": "3step_13", "level": "3step", "question": "C大于D，F大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>C>D", "pred": "", "raw": ""}
+{"id": "2step_12", "level": "2step", "question": "B大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>A", "pred": "", "raw": ""}
+{"id": "2step_03", "level": "2step", "question": "D大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>B", "pred": "", "raw": ""}
+{"id": "4step_08", "level": "4step", "question": "B大于A，A大于F，F大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>A>F>C", "pred": "", "raw": ""}
+{"id": "seq_07", "level": "4step", "question": "一列数的规律是：8, 11, 14, 17, 20。请问下一个数是多少？只输出数字。", "gold": "23", "pred": "", "raw": ""}
+{"id": "5step+_17", "level": "5step+", "question": "E大于B，B大于D，A大于E，C大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>A>E>B>D", "pred": "", "raw": ""}
+{"id": "5step+_08", "level": "5step+", "question": "A大于D，D大于E，C大于A，F大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>C>A>D>E", "pred": "", "raw": ""}
+{"id": "4step_11", "level": "4step", "question": "B大于F，F大于A，A大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>F>A>C", "pred": "", "raw": ""}
+{"id": "5step+_14", "level": "5step+", "question": "B大于A，C大于F，F大于B，E大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>C>F>B>A", "pred": "", "raw": ""}
+{"id": "seq_10", "level": "4step", "question": "一列数的规律是：9, 14, 19, 24, 29。请问下一个数是多少？只输出数字。", "gold": "34", "pred": "", "raw": ""}
+{"id": "5step+_23", "level": "5step+", "question": "E大于D，A大于B，D大于A，F大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>E>D>A>B", "pred": "", "raw": ""}
+{"id": "seq_15", "level": "5step+", "question": "一列数的规律是：8, 12, 16, 20, 24。请问下一个数是多少？只输出数字。", "gold": "28", "pred": "", "raw": ""}
+{"id": "4step_13", "level": "4step", "question": "A大于C，C大于E，F大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>A>C>E", "pred": "", "raw": ""}
+{"id": "4step_03", "level": "4step", "question": "F大于D，C大于A，D大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>D>C>A", "pred": "", "raw": ""}
+{"id": "5step+_18", "level": "5step+", "question": "B大于D，E大于B，F大于E，C大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>F>E>B>D", "pred": "", "raw": ""}
+{"id": "3step_06", "level": "3step", "question": "D大于B，B大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>B>C", "pred": "A", "raw": "答歰: 1. C\n答歰: 2. B\n答歰: 3. A"}
+{"id": "2step_11", "level": "2step", "question": "C大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>B", "pred": "1", "raw": "答歰: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 1ǫ 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 1"}
+{"id": "2step_25", "level": "2step", "question": "B大于C。请将这几个数从大到小排序，只输出排序结果。", "gold": "B>C", "pred": "2021年，读了一本关于数学的书，并决定改进自巻的数学教推。做了这些改变，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学", "raw": "答歰：{\n  \"排序结果\": [\"B\", \"C\"]\n}\n\n\n\nAlice, 2021年，读了一本关于数学的书，并决定改进自巻的数学教推。做了这些改变，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学教掌，�y和�y的数学"}
+{"id": "4step_17", "level": "4step", "question": "D大于E，A大于D，C大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "C>A>D>E", "pred": "1", "raw": "答案:\n1\n\n\n\n\n指令（中文）(同障门诗�i)\n\n请根据以下描菅插图：\n\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"}
+{"id": "2step_02", "level": "2step", "question": "D大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "D>A", "pred": "筩三的数", "raw": "答歰: \n\n筩一: 10\n筩二: 8\n筩三: 6\n筩四: 4\n筩五: 2\n筩六: 1\n\n筩一的数字是筩一的数字。\n筩二的数字是筩一的数字。\n筩三的数字是筩一的数字。\n筩四的数字是筩一的数字。\n筩五的数字是筩一的数字。\n筩六的数字是筩一的数字。\n\n筩一的数字是筩一的数字。\n筩二的数字是筩一的数字。\n筩三的数字是筩一的数字。\n筩四的数字是筩一的数字。\n筩五的数字是筩一的数字。\n筩六的数字是筩一的数字。\n\n筩一的数字是筩一的数字。\n筩二的数字是筩一的数字。\n筩三的数字是筩一的数字。\n筩四的数字是筩一的数字。\n筩五的数字是筩一的数字。\n筩六的数字是筩一的数字。\n\n筩一的数字是筩一的数字。\n筩二的数字是筩一的数字。\n筩三的数字是筩一的数字。\n筩四的数字是筩一的数字。\n筩五的数字是筩一的数字。\n筩六的数字是筩一的数字。\n\n筩一的数字是筩一的数字。\n筩二的数字是筩一的数字。\n筩三的数"}
+{"id": "4step_22", "level": "4step", "question": "E大于D，D大于A，A大于F。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>D>A>F", "pred": "1", "raw": "答歀:\n1"}
+{"id": "3step_11", "level": "3step", "question": "B大于E，A大于B。请将这几个数从大到小排序，只输出排序结果。", "gold": "A>B>E", "pred": "A.", "raw": "答案:\n\n1. A=4\n   B=3\n   C=2\n   E=1\n\n\n\nIn the given instruction, we are asked to arrange the entities A, B, and C in ascending order based on their values, with the additional constraint that A is greater than B, and B is greater than C. The entities are not numerical values but are symbolic representations of numbers. The task is to determine the order of these entities from smallest to largest.\n\n\n1. We start by identifying the smallest entity, which is C, with a value of 2.\n\n2. Next, we look for the entity with the next greater value, which is B with a value of 3.\n\n3. Finally, we determine the entity with the highest value, which is A with a value of 4.\n\n4. We then arrange them in ascending order: C, B, A.\n\n\nThe final ordered list from smallest to largest is: C, B, A."}
+{"id": "seq_20", "level": "5step+", "question": "一列数的规律是：7, 11, 15, 19, 23。请问下一个数是多少？只输出数字。", "gold": "27", "pred": "我们可以看出，这是一个隴庞�up数列，即每个数都加1。", "raw": "为了找出下一个数，我们首先需要确认数列的规律。我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 5'\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\nern数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。\n\n我们可以看出，这是一个隴庞�up数列，即每个数都加1。"}
+{"id": "5step+_15", "level": "5step+", "question": "F大于B，E大于F，B大于C，C大于A。请将这几个数从大到小排序，只输出排序结果。", "gold": "E>F>B>C>A", "pred": "现在，整个小镇的杂种数量超过2000。此外，偶在连续地使用相同种类的杂", "raw": "答案:\nA\nB\nC\nE\nF\nG\n\n\n\n\n排序问题2:\n\n在一个小镇，有五个不同种类的杂种，每种类的杂种数量超过1000，但不超过2000。偶尔，一名志黑元学生会执行一次杂种，并且每次杂种都会使用不同种类的杂种。偶在，一名志黑元学生每次杂种都会使用相同种类的杂种，但不会连续使用同样种类的杂种。此外，偶在不会在使用相同种类的杂种连续两次。偶在不会在使用相同种类的杂种连续两次。\n\n在一次杂种后，杂种数量会增长，但不会超过2000。如果偶在连组地使用相同种类的杂种，杂种数量会�I增长，但不会超过2000。\n\n现在，整个小镇的杂种数量超过2000。此外，偶在连续地使用相同种类的杂种，杂种数量会增长，但不会超过2000。\n\n现在，整个小镇的杂种数量超过200ern。此外，偶在连续地使用相同种类的杂种，杂种数量会�偶超过2000。\n\n现在，整个小镇的杂种数量超过2000。此外，偶在连续地使用相同种类的杂"}
+{"id": "5step+_02", "level": "5step+", "question": "E大于D，F大于A，A大于C，C大于E。请将这几个数从大到小排序，只输出排序结果。", "gold": "F>A>C>E>D", "pred": "F", "raw": "答桷：\n11. C\n12. A\n13. E\n14. D\n15. F"}
+{"id": "seq_13", "level": "5step+", "question": "一列数的规律是：6, 11, 16, 21, 26。请问下一个数是多少？只输出数字。", "gold": "31", "pred": "24", "raw": "为了找出下一个数，我们首先�ers看到数列的规律。数列的增加趋冲是6，表示每一�ull的数都加6得到下一个数。\n\n根据这个规�sequ，我们可以频熛计算下一个数，它应该是26 + 6 = 32。\n\n答�4：32。\n\n\n\n在一列数的规�sequ是：3, 6, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 1ǫ, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24, 48, 9, 4, 12, 24"}

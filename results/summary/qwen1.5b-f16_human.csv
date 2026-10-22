@@ -1,0 +1,323 @@
+﻿ID,Level,Gold,Raw_Output,Manual_Score
+seq_01,4step,17,,
+3step_12,3step,C>D>E,,
+2step_14,2step,F>D,,
+4step_10,4step,A>D>E>B,,
+2step_23,2step,A>B,,
+2step_08,2step,E>D,,
+seq_09,4step,35,,
+4step_01,4step,B>E>C>D,,
+seq_08,4step,30,,
+seq_11,5step+,26,,
+2step_17,2step,C>D,,
+4step_15,4step,D>B>F>E,,
+5step+_13,5step+,D>C>E>A>B,,
+3step_25,3step,D>E>A,,
+3step_01,3step,E>C>B,,
+5step+_03,5step+,A>E>D>B>F,,
+2step_10,2step,D>B,,
+2step_21,2step,A>F,,
+2step_05,2step,B>D,,
+4step_24,4step,B>F>E>D,,
+3step_17,3step,A>E>B,,
+seq_17,5step+,22,,
+3step_02,3step,B>D>F,,
+5step+_07,5step+,E>C>A>B>F,,
+3step_19,3step,C>D>F,,
+5step+_05,5step+,E>D>F>C>B,,
+4step_20,4step,E>C>D>F,,
+4step_16,4step,E>B>D>C,,
+5step+_01,5step+,A>F>B>D>C,,
+seq_14,5step+,30,,
+2step_06,2step,C>B,,
+2step_22,2step,E>D,,
+5step+_19,5step+,A>F>E>D>B,,
+5step+_24,5step+,F>A>B>D>E,,
+seq_04,4step,19,,
+5step+_06,5step+,E>C>F>A>D,,
+5step+_11,5step+,E>B>F>A>D,,
+4step_07,4step,E>F>D>A,,
+5step+_16,5step+,A>F>E>C>B,,
+5step+_12,5step+,B>F>D>A>E,,
+4step_06,4step,B>C>D>A,,
+4step_14,4step,C>D>E>A,,
+2step_04,2step,B>C,,
+5step+_22,5step+,E>A>C>D>F,,
+2step_18,2step,A>F,,
+2step_09,2step,C>B,,
+seq_19,5step+,27,,
+5step+_04,5step+,E>A>C>D>B,,
+2step_01,2step,D>B,,
+2step_20,2step,E>D,,
+5step+_21,5step+,B>C>D>E>A,,
+5step+_09,5step+,A>F>B>C>E,,
+2step_15,2step,E>B,,
+seq_05,4step,28,,
+2step_13,2step,B>D,,
+4step_04,4step,D>E>A>F,,
+2step_07,2step,F>B,,
+2step_19,2step,D>C,,
+3step_14,3step,B>D>E,,
+3step_09,3step,A>D>C,,
+3step_24,3step,A>E>B,,
+5step+_20,5step+,B>F>E>D>A,,
+3step_22,3step,A>C>E,,
+seq_16,5step+,27,,
+4step_12,4step,F>D>B>E,,
+3step_03,3step,D>E>B,,
+seq_06,4step,24,,
+2step_24,2step,A>D,,
+4step_19,4step,A>C>F>E,,
+4step_23,4step,B>A>E>D,,
+3step_16,3step,F>C>A,,
+seq_12,5step+,15,,
+2step_16,2step,E>A,,
+3step_05,3step,E>D>A,,
+3step_08,3step,C>F>D,,
+seq_18,5step+,24,,
+3step_10,3step,B>F>A,,
+4step_09,4step,C>E>D>B,,
+3step_21,3step,B>C>F,,
+3step_18,3step,C>B>D,,
+5step+_25,5step+,B>D>E>F>C,,
+4step_05,4step,E>A>B>D,,
+3step_20,3step,F>A>E,,
+4step_18,4step,E>F>A>C,,
+4step_21,4step,A>B>E>D,,
+seq_02,4step,30,,
+3step_23,3step,C>E>F,"根据题目中的条件：
+
+- C > E
+- E > F
+
+我们可以得出结论：
+
+1. C > E > F
+
+所以，这些数从大到小的排序结果是：
+
+**答案：C, E, F**",
+4step_25,4step,B>F>D>E,"根据题目中的条件：
+
+- B > F
+- F > D
+- D > E
+
+我们可以得出以下的顺序关系：
+1. B > F > D > E
+
+所以，最后的答案是：
+答案：B, F, D, E",
+5step+_10,5step+,A>F>E>B>C,"根据给定的条件：
+
+1. F > E
+2. A > F
+3. E > B
+4. B > C
+
+我们可以推导出以下关系：
+- 由于A大于F且F大于E，所以A大于E。
+- 因为B大于C且E大于B，所以E大于C。
+
+因此，从大到小的顺序是：A > E > F > B > C。",
+3step_15,3step,E>A>C,E > A > C,
+3step_07,3step,D>E>B,A>B>D>E,
+seq_03,4step,27,答案：27,
+4step_02,4step,F>D>C>E,"根据题目中的条件：
+
+1. C > E
+2. F > D
+3. D > C
+
+我们可以推导出的顺序是：
+- 因为D大于C，所以F和E都比D小。
+- 由于F大于D，且D大于C，因此F必然大于C。
+
+综上所述，从大到小排序的结果是：F, E, D, C。",
+3step_04,3step,B>E>F,"根据题目中的条件：
+
+1. E > F
+2. B > E
+
+我们可以推断出：
+- 因为E大于F，所以B也一定大于E（因为B大于E）。
+- 由于E大于F，而B又大于E，因此B必然大于F。
+
+综上所述，从大到小的排序结果是：B, E, F。",
+3step_13,3step,F>C>D,"根据题目中的条件：
+1. C > D
+2. F > C
+
+我们可以推断出：
+- 因为C大于D，所以F也一定大于C（因为F大于C）。
+- 由于C大于D，且F大于C，因此F和C都比D大。
+
+综上所述，从大到小的排序结果是：F, C, D。",
+2step_12,2step,B>A,"要解决这个问题，我们需要知道具体的数字。但是，根据题目中的信息，我们只知道B大于A。因此，我们可以假设一些数值来演示如何进行排序。
+
+例如：
+- A = 10
+- B = 20
+
+现在，我们将这些数从大到小排列：
+
+1. B (20)
+2. A (10)
+
+所以，最终结果是：
+
+答案：B, A",
+2step_03,2step,D>B,"A大于C。请逐步推理，最后得出结论。
+
+答案：A",
+4step_08,4step,B>A>F>C,B > A > F > C,
+seq_07,4step,23,答案：23,
+5step+_17,5step+,C>A>E>B>D,"根据题目中的条件：
+
+1. E > B
+2. B > D
+3. A > E
+4. C > A
+
+我们可以推导出以下关系：
+- 由于E > B > D，所以A > E > B > D。
+- 再结合C > A，可以得出C > A > E > B > D。
+
+因此，从大到小的排序结果是：
+
+答案：C > A > E > B > D",
+5step+_08,5step+,F>C>A>D>E,"根据题目中的条件：
+
+1. A > D
+2. D > E
+3. C > A
+4. F > C
+
+我们可以推导出以下关系：
+- 由于A > D > E，所以D是最大的。
+- 再考虑到C > A，因此C比A大，但不确定与D的关系。
+- 最后，F > C。
+
+综上所述，从大到小的排序为：D > F > C > A > E。",
+4step_11,4step,B>F>A>C,"B > F > A > C
+
+答案：B > F > A > C",
+5step+_14,5step+,E>C>F>B>A,"根据题目中的条件：
+
+1. B > A
+2. C > F
+3. F > B
+4. E > C
+
+我们可以推导出以下关系：
+- 由于B > A和C > F，所以E > C > F。
+- 再结合F > B，可以得出E > C > F > B。
+
+因此，从大到小的排序结果是：E > C > F > B > A。",
+seq_10,4step,34,答案：34,
+5step+_23,5step+,F>E>D>A>B,"根据题目中的信息：
+
+- E > D
+- A > B
+- D > A
+- F > E
+
+我们可以推导出以下关系：
+1. 由于E大于D且A大于B，所以可以得出F大于E且F大于A。
+2. 因为D大于A，所以D也大于B。
+
+因此，从大到小的顺序是：F > E > D > A > B。",
+seq_15,5step+,28,答案：28,
+4step_13,4step,F>A>C>E,"根据题目中的条件：
+
+1. A > C
+2. C > E
+3. F > A
+
+我们可以推导出以下关系：
+- 由于A > C且C > E，所以可以得出A > E。
+- 因为F > A，所以F > E。
+
+因此，从大到小的顺序是：F, A, E, C。",
+4step_03,4step,F>D>C>A,"根据题目中的条件：
+
+- F > D
+- C > A
+- D > C
+
+我们可以推导出的顺序是：
+1. F > D
+2. C > A
+3. D > C
+
+将这些关系综合起来，可以得到从大到小的排序结果为：F > C > D > A。",
+5step+_18,5step+,C>F>E>B>D,"根据题目中的条件：
+
+- B > D
+- E > B
+- F > E
+- C > F
+
+我们可以推导出以下关系：
+1. 由于B > D，E > B，则有E > D。
+2. 因为F > E，所以F > D。
+3. 最后，C > F。
+
+因此，从大到小的顺序是：C > F > E > B > D。",
+3step_06,3step,D>B>C,"A大于B，B大于C。所以A最大，C最小。
+
+答案：A > B > C",
+2step_11,2step,C>B,A > B > C,
+2step_25,2step,B>C,A>B>C,
+4step_17,4step,C>A>D>E,"根据题目中的条件：
+
+1. D > E
+2. A > D
+3. C > A
+
+我们可以推导出以下关系：
+- 因为A > D，所以C > A > D。
+- 由于D > E，因此E < D。
+
+综上所述，从大到小的排序结果是：C > A > D > E。",
+2step_02,2step,D>A,好的，请提供您需要比较的三个数。,
+4step_22,4step,E>D>A>F,答案：E > D > A > F,
+3step_11,3step,A>B>E,"根据题目中的条件：
+
+- B > E
+- A > B
+
+我们可以推断出：
+1. A 是最大的数，因为它是大于B的，并且可能还大于E。
+2. B 接下来是第二大的数，因为它大于E但小于A。
+3. E 最小，因为它小于B。
+
+所以从大到小排序的结果是：
+
+答案：A, B, E",
+seq_20,5step+,27,答案：27,
+5step+_15,5step+,E>F>B>C>A,"根据给定的条件：
+
+1. F > B
+2. E > F
+3. B > C
+4. C > A
+
+我们可以推导出以下关系：
+- 由于E > F > B > C > A，所以A最小。
+- 因为F > B > C > A，所以F最大。
+
+因此，从大到小的排序结果是：E, F, B, C, A。",
+5step+_02,5step+,F>A>C>E>D,"根据给定的条件：
+
+- E > D
+- F > A
+- A > C
+- C > E
+
+我们可以推导出以下关系：
+1. 由于E > D和A > C，所以E > D > A。
+2. 再结合C > E，可以得出F > A > C > E。
+
+因此，从大到小的排序结果是：F > A > C > E > D。",
+seq_13,5step+,31,答案：31,

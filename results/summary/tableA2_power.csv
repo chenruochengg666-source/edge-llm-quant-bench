@@ -1,0 +1,3 @@
+﻿Model,Quant,Power_Mode,Context_Length,pp512 (t/s),tg128 (t/s)
+qwen1.5b,Q4_K_M,Battery_Saver,512,243.57,33.46
+qwen1.5b,Q4_K_M,AC_High_Perf,512,239.72,34.2
