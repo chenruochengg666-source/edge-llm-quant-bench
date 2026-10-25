@@ -1,4 +1,4 @@
-# C:\Users\cjy13\quant_eval\04_scripts\calc_ca_kappa_final_v2
+# C:\Users\cjy13\quant_eval\04_scripts\calc_ca_kappa_final_v2.py
 import pandas as pd
 from sklearn.metrics import cohen_kappa_score
 import os
@@ -9,28 +9,35 @@ out_csv = os.path.join(base, "table7_ca_kappa_final.csv")
 
 df = pd.read_csv(detail_csv, encoding='utf-8-sig')
 
-# 只保留有 Human_Score 的行
-df = df.dropna(subset=["Human_Score"]).copy()
+# 统一量化档位的命名规范
+df["Quant"] = df["Quant"].astype(str).str.upper()
+df["Quant"] = df["Quant"].str.replace(r'.*-', '', regex=True)
 
-models = ["qwen1.5b", "qwen3b", "phi3", "ll32"]
+models = df["Model"].unique()
+print(f"检测到以下模型: {models}")
+
 quants = ["Q2_K", "Q3_K_M", "Q4_K_M", "Q5_K_M", "Q6_K", "Q8_0"]
-fp16_label = "f16"
-THRESHOLD = 1.0  # 1.0 才算完全正确
+THRESHOLD = 1.0
 
 records = []
 for model in models:
-    fp16 = df[(df["Model"] == model) & (df["Quant"] == fp16_label)]
+    fp16 = df[(df["Model"] == model) & (df["Quant"] == "F16")]
     if fp16.empty:
-        print(f"⚠️ {model} 没有 FP16 人工评分，跳过")
         continue
+
+    fp16 = fp16.dropna(subset=["Human_Score"])
+    # ✅ 核心修复：用 ID 来匹配同一道题，而不是 Task_ID
     fp16_dict = dict(zip(fp16["ID"], fp16["Human_Score"]))
 
     for quant in quants:
-        qdf = df[(df["Model"] == model) & (df["Quant"] == quant)]
+        qdf = df[(df["Model"] == model) & (df["Quant"] == quant)].dropna(subset=["Human_Score"])
         if qdf.empty:
             continue
+
+        # ✅ 核心修复：同理，这里也用 ID
         quant_dict = dict(zip(qdf["ID"], qdf["Human_Score"]))
 
+        # 寻找两个档位都做过的同一批题目
         common = sorted(set(fp16_dict) & set(quant_dict))
         if not common:
             continue
@@ -51,23 +58,30 @@ for model in models:
         total = len(common)
         ca = both / total if total else 0
 
-        # Kappa 只在两类都出现时才有定义
+        # 只有当两边都有对有错时，Kappa 才有意义
         if len(set(y_fp16)) > 1 and len(set(y_quant)) > 1:
             kappa = cohen_kappa_score(y_fp16, y_quant)
+            kappa_str = round(kappa, 4)
         else:
-            kappa = float('nan')
+            kappa_str = "N/A"
 
         records.append({
             "Model": model,
             "Quant": quant,
             "Total_Questions": total,
-            "FP16_Accuracy": round(fp16_ok_n / total, 4),
-            "Quant_Accuracy": round(quant_ok_n / total, 4),
+            "FP16_Accuracy": round(fp16_ok_n / total, 4) if total > 0 else 0,
+            "Quant_Accuracy": round(quant_ok_n / total, 4) if total > 0 else 0,
             "Correctness_Agreement": round(ca, 4),
-            "Cohen_Kappa": round(kappa, 4) if not pd.isna(kappa) else "N/A"
+            "Cohen_Kappa": kappa_str
         })
 
-out = pd.DataFrame(records)
+columns = ["Model", "Quant", "Total_Questions", "FP16_Accuracy", "Quant_Accuracy", "Correctness_Agreement",
+           "Cohen_Kappa"]
+out = pd.DataFrame(records, columns=columns)
+
+if not out.empty:
+    out = out.sort_values(by=["Model", "Quant"]).reset_index(drop=True)
+
 out.to_csv(out_csv, index=False, encoding="utf-8-sig")
-print(f"表7最终版已保存: {out_csv}")
+print(f"\n✅ 表7（模型间一致性）已保存，共 {len(out)} 行数据。")
 print(out.to_string(index=False))

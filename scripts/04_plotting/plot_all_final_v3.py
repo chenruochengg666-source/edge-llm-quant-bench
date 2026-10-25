@@ -22,10 +22,14 @@ QUANT_ORDER = ["F16", "Q8_0", "Q6_K", "Q5_K_M", "Q4_K_M", "Q3_K_M", "Q2_K"]
 # ========== 2. 安全读取 ==========
 def safe_read(path):
     if os.path.exists(path):
-        df = pd.read_csv(path, encoding='utf-8-sig')
-        if "Quant" in df.columns:
-            df["Quant"] = df["Quant"].astype(str).str.upper()
-        return df
+        try:
+            df = pd.read_csv(path, encoding='utf-8-sig')
+            if "Quant" in df.columns:
+                df["Quant"] = df["Quant"].astype(str).str.upper()
+            return df
+        except pd.errors.EmptyDataError:
+            print(f"⚠️ 文件为空 {os.path.basename(path)}，相关图表将跳过。")
+            return pd.DataFrame()
     print(f"⚠️ 找不到 {os.path.basename(path)}，相关图表将跳过。")
     return pd.DataFrame()
 
