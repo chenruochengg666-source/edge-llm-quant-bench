@@ -1,0 +1,2 @@
+load_backend: loaded RPC backend from C:\Users\cjy13\Desktop\llama.cpp-master\llama.cpp-master\build\bin\Release\ggml-rpc.dll
+load_backend: loaded CPU backend from C:\Users\cjy13\Desktop\llama.cpp-master\llama.cpp-master\build\bin\Release\ggml-cpu-alderlake.dll

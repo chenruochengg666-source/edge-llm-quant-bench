@@ -1,0 +1,19 @@
+0.00.020.838 I srv  llama_server: initializing ...
+0.00.020.847 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.021.156 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.030.560 I srv    load_model: loading model 'C:\Users\cjy13\quant_eval\02_gguf\quantized\qwen1.5b-Q4_K_M.gguf'
+0.00.369.400 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.802.955 W llama_context: n_ctx_seq (65536) > n_ctx_train (32768) -- possible training context overflow
+0.01.178.631 I cmn          init: llama threadpool init, n_threads = 4
+0.01.395.682 W srv    load_model: the slot context (65536) exceeds the training context of the model (32768) - capping
+0.01.686.045 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.01.690.919 I srv  llama_server: model loaded
+0.01.690.926 I srv  llama_server: listening on http://127.0.0.1:8080
+0.01.690.927 W srv  llama_server: notice: server default port will be changed to :9931 in a future release (ref: https://github.com/ggml-org/llama.cpp/pull/26508)
+0.01.970.124 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.01.970.175 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.02.951.892 I slot print_timing: id  3 | task 0 | prompt eval time =      42.69 ms /     3 tokens (   14.23 ms per token,    70.28 tokens per second)
+0.02.951.906 I slot print_timing: id  3 | task 0 |        eval time =     938.90 ms /    32 tokens (   30.29 ms per token,    33.02 tokens per second)
+0.02.951.925 I slot print_timing: id  3 | task 0 |       total time =     981.59 ms /    35 tokens
+0.02.951.926 I slot print_timing: id  3 | task 0 |    graphs reused =         31
+0.02.951.952 I slot      release: id  3 | task 0 | stop processing: n_tokens = 34, truncated = 0
