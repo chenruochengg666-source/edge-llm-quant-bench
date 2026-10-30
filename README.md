@@ -4,11 +4,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![llama.cpp](https://img.shields.io/badge/llama.cpp-b11223-blue)](https://github.com/ggml-org/llama.cpp)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23656926-blue)](https://doi.org/10.5281/zenodo.23656926)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23656926-blue)](https://doi.org/10.5281/zenodo.23656925)
 
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
-- 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23656926>
+- 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23791404>
 - 对应提交：`d673987846cfc3682284b5192b8ba2d9f12e4ef2`
 
 ## 实验进度

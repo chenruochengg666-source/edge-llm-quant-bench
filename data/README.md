@@ -5,18 +5,18 @@
 ## 1. 公开评测数据集
 
 ### WikiText-2（PPL / KLD 语料）
-- **存放位置**：下载后置于 `data/wikitext2/wiki.test.raw`
+- **存放位置**：`data/wikitext2/wiki.test.raw`（**仓库不含，需自行下载**）
 - **来源**：[Salesforce/wikitext](https://huggingface.co/datasets/Salesforce/wikitext)（`wikitext-2-raw-v1`，test split）
 
 ### ARC-Easy（常识推理，全量 2376）
-- **存放位置**：下载后置于 `data/arc/ARC-Easy-test-full.jsonl`
+- **存放位置**：`data/arc/ARC-Easy-test-full.jsonl`（**仓库不含，需自行下载**）
 - **来源**：[allenai/ai2_arc](https://huggingface.co/datasets/allenai/ai2_arc)（ARC-Easy test split）
 - **评测口径**：本地 `llama-server` OpenAI 兼容接口，`temperature=0`、`top_p=1`、`seed=42`、`n_predict=32`；模型输出首 token 与标准答案选项匹配记 1 分，准确率 = 正确数 / 2376。
 - *注：7B/8B 规模使用固定种子抽取的 500 题子集，逐题结果见 `results/raw/arc_7b_subset/`、`results/raw/arc_llama8b_subset/`。*
 
 ## 2. 混合多步推理题库（400 题）
 
-- **存放位置**（运行构建脚本后生成）：
+- **存放位置**（运行构建脚本后生成，**仓库不含**）：
   - `data/reasoning/reasoning_mixed_400.jsonl`（400 题混合）
   - `data/reasoning/reasoning120.jsonl`（120 题自建）
   - `data/reasoning/reasoning_mixed_220.jsonl`（早期版本，保留供追溯）
