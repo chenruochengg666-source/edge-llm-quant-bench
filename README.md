@@ -9,7 +9,7 @@
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
 - 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23791404>
-- 对应提交：`d673987846cfc3682284b5192b8ba2d9f12e4ef2`
+- 对应提交：`5684877b27db780e5c8abcc033364e124efd515e`
 
 ## 实验进度
 
