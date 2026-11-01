@@ -8,15 +8,15 @@
 
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
-- 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23656925>
-- 对应提交：`ca8478d1eba3b39e71cded1b2185e0109e62d8d2`
+- 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23791404>
+- 对应提交：`d673987846cfc3682284b5192b8ba2d9f12e4ef2`
 
 ## 实验进度
 
 - [x] **PO-1 统计检验规范化**：两比例 z（Cohen's h）+ Welch t（Cohen's d）+ BH-FDR，判定为「q<0.05 且 |效应量|≥0.2」
 - [ ] PO-2 imatrix 敏感性
 - [ ] P0-3 多种子复测
-- [ ] P0-4 结构化生成任务
+- [x] **P0-4 结构化生成任务**：80 题（JSON 提取 30 / 表格 25 / 函数调用 25），四级指标（Parseable / Fields / Schema / Content）+ 洁净度（Extra）；见 `results/summary/table_struct_summary_v2.csv`、图18
 - [ ] P1-5 Needle 深度扫描
 - [ ] P1-6 安全对齐
 - [ ] P1-7 决策树 + 能力矩阵
@@ -44,19 +44,25 @@ edge-llm-quant-bench/
 │   │   ├── measure_ctx_speed.ps1   # llama-bench -p 4096~131072，预填充/生成速度
 │   │   ├── measure_rss.ps1         # 单档峰值 RSS
 │   │   └── extract_performance.py  # llama-bench 结果解析
-│   ├── 02_evaluation/        # ARC-Easy / 多步推理评测
+│   ├── 02_evaluation/        # ARC-Easy / 多步推理 / 结构化生成评测
 │   │   ├── run_arc_full.py
-│   │   └── run_reasoning_full.py
+│   │   ├── run_reasoning_full.py
+│   │   └── run_structured_v2.py    # 80 题结构化任务（支持断点续跑）
 │   ├── 03_analysis/          # 统计检验、信度、汇总
 │   │   ├── stat_tests_v2.py        # 两比例 z + Welch t + BH-FDR + Cohen's h/d
 │   │   ├── calc_inter_rater_reliability.py
-│   │   └── calc_ca_kappa_final_v2.py
+│   │   ├── calc_ca_kappa_final_v2.py
+│   │   ├── build_structured_set_v2.py   # 结构化题库（含 expected）
+│   │   └── eval_structured_v2.py        # 四级指标 + 洁净度评分
 │   └── 04_plotting/          # 论文图表
-├── data/                     # 题库与语料（ARC 2376 / 推理 120·220·400 / wiki.test.raw）
+├── data/                     # 题库与语料（不入库，由脚本下载/生成；见 data/README.md）
+│   ├── arc/  reasoning/  wikitext2/  structured/
 ├── results/
-│   ├── summary/              # 汇总表（table*.csv）
-│   └── raw/                  # 原始输出（arc / reasoning / kld / perf / rss / ctx）
-├── figures/                  # 论文图表 PNG
+│   ├── summary/              # 汇总表（table*.csv，含 table_struct_*_v2）
+│   ├── raw/                  # 原始输出（arc / reasoning / kld / perf / rss / ctx / structured_v2）
+│   └── legacy/               # 历史版本结果（如 table_stat_tests_legacy.csv）
+├── figures/                  # 论文图表 PNG（fig01–fig18，_legacy 为历史图）
+├── docs/                     # 说明文档（如 PO4_structured_v2_notes.md）
 ├── configs/                  # 配置
 └── README.md / env.md / CITATION.cff / LICENSE
 ```
@@ -144,6 +150,7 @@ python scripts/04_plotting/plot_all_final_v3.py      # 重绘论文图表
 | 表9 长上下文 | `results/raw/ctx/ctx_qwen1.5b_ext.csv`、`ctx_qwen1.5b_speed.csv` |
 | 表10/11 KV Cache、电源模式 | `results/summary/tableA3_kv_cache.csv`、`tableA2_power.csv` |
 | 双人评分信度 | `results/summary/table_inter_rater_reliability.csv` |
+| 表12/表13、图18 结构化生成 | `results/summary/table_struct_summary_v2.csv`、`table_struct_detail_v2.csv` |
 
 ---
 

@@ -78,6 +78,19 @@ llama-bench -m model.gguf -p 512 -n 128 -r 5 -t 4 -b 2048 -ub 512 -fa on -ngl 0
 .\scripts\01_benchmarks\measure_ctx_speed.ps1 -Model .\model-Q4_K_M.gguf -Out ..\results\raw\ctx\ctx_speed.csv
 ```
 
+### 结构化生成任务（JSON 提取 / Markdown 表格 / 函数调用）
+
+```bash
+# 1) 生成 80 题题库（含 expected 标准答案）
+python scripts\03_analysis\build_structured_set_v2.py
+
+# 2) 逐模型运行（支持断点续跑，中断后直接重跑即可）
+python scripts\02_evaluation\run_structured_v2.py
+
+# 3) 评分（四级指标 + 运行失败识别）
+python scripts\03_analysis\eval_structured_v2.py
+```
+
 ### 统计检验
 
 ```bash
