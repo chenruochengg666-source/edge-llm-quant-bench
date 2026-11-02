@@ -91,6 +91,19 @@ python scripts\02_evaluation\run_structured_v2.py
 python scripts\03_analysis\eval_structured_v2.py
 ```
 
+### 随机种子复测（P0-3）
+
+```bash
+# 1) 固定 seed(0) 抽取 500 题子集（已存在则校验不覆盖）
+python scripts\03_analysis\prepare_arc_subset.py
+
+# 2) 种子 42–46 重复推理（支持断点续跑、原子写盘）
+python scripts\02_evaluation\run_arc_seed.py
+
+# 3) 统计种子间 SD 与逐题一致率，并出图
+python scripts\03_analysis\analyze_arc_seed.py
+```
+
 ### 统计检验
 
 ```bash

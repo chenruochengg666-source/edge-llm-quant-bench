@@ -15,7 +15,7 @@
 
 - [x] **PO-1 统计检验规范化**：两比例 z（Cohen's h）+ Welch t（Cohen's d）+ BH-FDR，判定为「q<0.05 且 |效应量|≥0.2」
 - [ ] PO-2 imatrix 敏感性
-- [ ] P0-3 多种子复测
+- [x] **P0-3 多种子复测**：500 题子集 × 6 档位 × 种子 42–46（15 000 次）；FP16/Q4_K_M 种子间 SD ≤ 0.18pp、逐题一致率 ≥ 99.2%，见 `results/summary/table14_seed_stability.csv`、图19
 - [x] **P0-4 结构化生成任务**：80 题（JSON 提取 30 / 表格 25 / 函数调用 25），四级指标（Parseable / Fields / Schema / Content）+ 洁净度（Extra）；见 `results/summary/table_struct_summary_v2.csv`、图18
 - [ ] P1-5 Needle 深度扫描
 - [ ] P1-6 安全对齐
@@ -34,6 +34,9 @@
 
 ---
 
+> **统计口径说明**：ARC-Easy 准确率按「排除推理失败后的有效样本」计算（服务崩溃/超时不计为答错），
+> 失败率单列于 `table4_downstream_arc.csv` 的 `Failure_Rate(%)` 列。
+
 ## 仓库结构
 
 ```text
@@ -44,8 +47,9 @@ edge-llm-quant-bench/
 │   │   ├── measure_ctx_speed.ps1   # llama-bench -p 4096~131072，预填充/生成速度
 │   │   ├── measure_rss.ps1         # 单档峰值 RSS
 │   │   └── extract_performance.py  # llama-bench 结果解析
-│   ├── 02_evaluation/        # ARC-Easy / 多步推理 / 结构化生成评测
+│   ├── 02_evaluation/        # ARC-Easy / 多步推理 / 结构化生成 / 种子复测
 │   │   ├── run_arc_full.py
+│   │   ├── run_arc_seed.py         # 种子 42–46 重复推理（断点续跑 + 原子写盘）
 │   │   ├── run_reasoning_full.py
 │   │   └── run_structured_v2.py    # 80 题结构化任务（支持断点续跑）
 │   ├── 03_analysis/          # 统计检验、信度、汇总
@@ -53,7 +57,9 @@ edge-llm-quant-bench/
 │   │   ├── calc_inter_rater_reliability.py
 │   │   ├── calc_ca_kappa_final_v2.py
 │   │   ├── build_structured_set_v2.py   # 结构化题库（含 expected）
-│   │   └── eval_structured_v2.py        # 四级指标 + 洁净度评分
+│   │   ├── eval_structured_v2.py        # 四级指标 + 洁净度评分
+│   │   ├── prepare_arc_subset.py        # 固定 seed(0) 抽 500 题子集
+│   │   └── analyze_arc_seed.py          # 种子间 SD / 逐题一致率统计
 │   └── 04_plotting/          # 论文图表
 ├── data/                     # 题库与语料（不入库，由脚本下载/生成；见 data/README.md）
 │   ├── arc/  reasoning/  wikitext2/  structured/
@@ -141,7 +147,7 @@ python scripts/04_plotting/plot_all_final_v3.py      # 重绘论文图表
 |---|---|
 | 表1 体积与推理性能 | `results/summary/table2_engineering.csv` |
 | 表2 保真度（PPL/KLD/Same top-p） | `results/summary/table_kld_summary.csv`、`table3_fidelity.csv` |
-| 表3 ARC-Easy（2376，含 q 值与效应量） | `results/summary/table4_downstream_arc.csv`、`table5_stat_final.csv` |
+| 表3 ARC-Easy（2376，含 q 值、效应量与失败率） | `results/summary/table3_ARC_final.csv`、`table4_downstream_arc.csv`、`table5_stat_final.csv` |
 | 表4 多步推理得分 | `results/summary/table5_reasoning_final_summary.csv`、`table5_reasoning_detail.csv` |
 | 表5 关键统计检验 | `results/summary/table5_stat_final.csv` |
 | 表6 跨架构失败模式 | `results/summary/table4_downstream_arc.csv` |
@@ -151,6 +157,7 @@ python scripts/04_plotting/plot_all_final_v3.py      # 重绘论文图表
 | 表10/11 KV Cache、电源模式 | `results/summary/tableA3_kv_cache.csv`、`tableA2_power.csv` |
 | 双人评分信度 | `results/summary/table_inter_rater_reliability.csv` |
 | 表12/表13、图18 结构化生成 | `results/summary/table_struct_summary_v2.csv`、`table_struct_detail_v2.csv` |
+| 表14、图19 种子稳健性 | `results/summary/table14_seed_stability.csv`、`table_p03_seed_anova.csv` |
 
 ---
 
