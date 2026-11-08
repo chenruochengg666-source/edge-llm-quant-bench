@@ -10,7 +10,7 @@
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
 - 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23656925>
-- 对应提交：`72d13b9ea2116767eae34ce1ebcdb6ed0f9fc491`
+- 对应提交：`4f02094f53c54628d4e27c88fe4dd45c7d697d8b`
 
 ## 版本记录
 
