@@ -1,10 +1,19 @@
 cff-version: 1.2.1
-message: "如果使用了本项目的代码或数据，请引用以下DOI。"
-title: "纯CPU边缘大模型量化评估：实验代码与数据"
+message: "如果使用了本项目的代码或数据，请引用以下 DOI。"
+title: "纯CPU边缘大模型量化评估：能力—工程双轨评测框架与实验代码"
 authors:
   - family-names: "陈"
     given-names: "若城"
-version: v1.2.1-paper
+version: v1.4.0-paper
 doi: 10.5281/zenodo.23656925
-date-released: 2026-10-26
+date-released: 2026-11-08
 license: MIT
+keywords:
+  - 大语言模型
+  - 训练后量化
+  - 边缘计算
+  - 纯 CPU 推理
+  - llama.cpp
+  - 量化评测
+  - 保真度指标
+repository-code: "https://github.com/chenruocheng666-source/edge-llm-quant-bench"

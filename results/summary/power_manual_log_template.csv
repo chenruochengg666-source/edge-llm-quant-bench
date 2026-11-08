@@ -1,0 +1,5 @@
+﻿Group,Supply,PerfMode,tg128_tps,pp512_tps,Idle_W,Load_W,Measure_Tool,Note
+AC_HighPerf,AC,HighPerf,,,,,墙插功率计,插电+最佳性能，电池已充满
+AC_Saver,AC,Saver,,,,,墙插功率计,插电+最佳能效/节电
+BAT_HighPerf,BAT,HighPerf,,,,,BatteryInfoView,电池+最佳性能
+BAT_Saver,BAT,Saver,,,,,BatteryInfoView,电池+最佳能效/节电

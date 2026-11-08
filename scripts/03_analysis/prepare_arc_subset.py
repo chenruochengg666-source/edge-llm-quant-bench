@@ -1,4 +1,4 @@
-﻿# prepare_arc_subset.py (v2)
+# prepare_arc_subset.py (v2)
 # 固定 seed(0) 抽取 500 题；若已存在则校验题数与 id 集合，不覆盖
 import json, os, random
 

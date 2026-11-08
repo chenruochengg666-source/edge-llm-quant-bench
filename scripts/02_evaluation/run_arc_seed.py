@@ -1,4 +1,4 @@
-﻿# run_arc_seed.py (v5)
+# run_arc_seed.py (v5)
 # v3 修正（模板/参数口径）；v4 修正（max_tokens、全角字母、记录 prompt）
 # v5 修正（提取器增强、全档硬约束、max_tokens 16）
 # v3 关键修正：与主实验 run_arc_full.py 口径完全对齐

@@ -1,4 +1,4 @@
-﻿# run_structured_v2.py  (v2.1 支持续跑)
+# run_structured_v2.py  (v2.1 支持续跑)
 # 特性：
 #   - 断点续跑：读取已有 jsonl，跳过 status=ok 的题；empty/error 会重跑
 #   - 模型级跳过：若某模型全部完成，直接跳过（不启动 llama-server，省时间）

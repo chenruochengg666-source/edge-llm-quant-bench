@@ -1,4 +1,4 @@
-﻿﻿# eval_structured_v2.py  (v2.2)
+# eval_structured_v2.py  (v2.2)
 # 修正：
 #   1) Content_Correct 依赖 Schema_Valid（表格类不再「行数不对却算内容对」）
 #   2) Markdown 只解析第一个表格块，遇空行/非表格行停止；并记录 extra_text（是否夹带解释）
@@ -107,6 +107,27 @@ def parse_md_blocks(text):
             out.append(rows)
     return out
 
+def has_extra_text_md(text):
+    """表格之外是否夹带解释性文字（已剔除表格行、分隔线、代码块标记）"""
+    for line in text.splitlines():
+        s = line.strip()
+        if not s or s.startswith("```"):
+            continue
+        if "|" in s:
+            continue
+        if re.fullmatch(r"[:\-\|\s]+", s):   # 表格分隔线
+            continue
+        return 1
+    return 0
+
+def has_extra_text_json(text, cands):
+    """JSON 片段之外是否夹带解释性文字"""
+    rest = text
+    for c in cands:
+        rest = rest.replace(c, "")
+    rest = re.sub(r"```(?:json)?", "", rest)
+    return 1 if rest.strip() else 0
+
 def norm_str(x):
     s = str(x).strip().lower()
     s = s.replace("　", " ")
@@ -165,7 +186,7 @@ for fname in sorted(os.listdir(RAW_DIR)):
                 c = 1 if (sch and content_ok_table(rows, q["expected_headers"], q["expected_rows"], eq_strict)) else 0
                 l = 1 if (sch and content_ok_table(rows, q["expected_headers"], q["expected_rows"], eq_lenient)) else 0
                 ct = 1 if any(content_ok_table(b, q["expected_headers"], q["expected_rows"], eq_lenient) for b in blocks) else 0
-                ex = 1 if len(blocks) > 1 else 0
+                ex = 1 if len(blocks) > 1 else 0   # 表格类：以“是否输出多个表格块”判定夹带
             else:
                 req = q["schema"].get("required", [])
                 obj, nested = choose_json(extract_json_candidates(raw), req)
@@ -179,6 +200,7 @@ for fname in sorted(os.listdir(RAW_DIR)):
                         sch = 0
                     c = 1 if (sch and content_ok_json(obj, q.get("expected", {}), eq_strict)) else 0
                     l = 1 if (sch and content_ok_json(obj, q.get("expected", {}), eq_lenient)) else 0
+                    ex = 1 if len(extract_json_candidates(raw)) > 1 else 0   # JSON 类：以“是否输出多个候选片段”判定冗余
                     for cand2 in extract_json_candidates(raw):
                         o2 = _as_obj(cand2)
                         if not isinstance(o2, dict):

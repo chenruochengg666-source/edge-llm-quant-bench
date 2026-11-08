@@ -63,8 +63,8 @@ def plot_fig_a():
     plt.title('7B/8B Scale: KLD vs ARC-Easy (Cross-Architecture)', fontsize=14, fontweight='bold')
     plt.grid(axis='y', linestyle='--', alpha=0.4)
 
-    out_path = os.path.join(OUT_DIR, "fig_7b8b_kld_vs_arc.pdf")
-    plt.savefig(out_path)
+    out_path = os.path.join(OUT_DIR, "fig11.png")
+    plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"✅ 图 A 已生成: {out_path}")
 
@@ -103,8 +103,8 @@ def plot_fig_b():
 
     plt.grid(axis='y', linestyle='--', alpha=0.4)
 
-    out_path = os.path.join(OUT_DIR, "fig_7b8b_arc_compare.pdf")
-    plt.savefig(out_path)
+    out_path = os.path.join(OUT_DIR, "fig12.png")
+    plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"✅ 图 B 已生成: {out_path}")
 

@@ -4,12 +4,35 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![llama.cpp](https://img.shields.io/badge/llama.cpp-b11223-blue)](https://github.com/ggml-org/llama.cpp)
+[![Version](https://img.shields.io/badge/version-v1.4.0--paper-green)](CITATION.cff)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23656925-blue)](https://doi.org/10.5281/zenodo.23656925)
 
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
 - 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23656925>
-- 对应提交：`79d3fc58a15f6c57437707cb6bef6d24cf7d5448`
+- 对应提交：`72d13b9ea2116767eae34ce1ebcdb6ed0f9fc491`
+
+## 版本记录
+
+| 版本 | 日期 | Zenodo 版本说明 | 主要变更 |
+|---|---|---|---|
+| **v1.4.0-paper** | 2026-11-08 | 见下方「v1.4.0 版本说明」 | 补齐多步推理全量（26 档 × 400 题，含 7B/8B）；新增电源 2×2 析因与 J/token 能耗；新增表5A 双轨判定与表8 全量 CA/Kappa；修正 Extra 口径；文献按首引顺序重排至 41 条；修复 6 个脚本 BOM 与续跑缺陷 |
+| v1.3.0 | 2026-10-31 | 文档与图表规范化修订（Documentation and figure normalization） | 论文表格统一为三线表；补充附录A（复现记录、实验环境与补充实验数据）；图01–图19 统一命名与归档；核心实验数据未变动 |
+| v1.2.1 | 2026-10-26 | feat(p04): structured benchmark, figures, and docs sync | 80 题结构化评测（四级指标 + Extra）、图18、统计判定规则统一、README/env/docs 同步 |
+| v1.1.1 | 2026-10-20 | Complete P0-1 statistical validation | 完成统计规范化：Bootstrap CI、BH-FDR、Cohen's h/d |
+
+> 说明：v1.1.1 与 v1.2.1 的版本说明沿用早期提交信息（英文）；v1.3.0 起改为内容说明；v1.4.0 起采用中英文对照的规范化描述。
+
+
+### v1.4.0 版本说明（Zenodo）
+
+**中文：**
+
+> 补齐多步推理全量数据（26 个「模型×档位」组合 × 400 题混合题库，含 2/3/4/5+ 步分层与有效响应数；7B/8B 的 FP16 因 OOM 未纳入）；新增电源 2×2 析因实验（插电/电池 × 最佳性能/最佳能效，每组 n=5）与 J/token 净能耗；新增双轨交叉判定（表5A，四类区间）与基于全量交集的实例级一致性（表8，N=2040~2332）；修正 Extra 指标口径并重算结构化基准；参考文献按首引顺序重排至 41 条并新增 2.4 节；修复 6 个脚本的 UTF-8 BOM 与续跑判定缺陷。
+
+**English:**
+
+> Full-scale multi-step reasoning benchmark (26 model–quantization combinations × 400 mixed tasks, with per-level breakdown and valid-response counts; 7B/8B FP16 excluded due to OOM); new 2×2 factorial power experiment (AC/battery × best-performance/best-efficiency, n = 5 per cell) with J/token net-energy accounting; new dual-track interval judgement (Table 5A, four-range taxonomy) and instance-level agreement recomputed on full ARC-Easy intersections (Table 8, N = 2040–2332); corrected the Extra metric definition and recomputed the structured benchmark; references reordered by first citation (41 entries) with a new related-work section 2.4; fixed UTF-8 BOM in 6 scripts and repaired the resume logic that previously treated empty predictions as completed.
 
 ## 实验进度
 
@@ -25,10 +48,10 @@
 
 ## 核心发现
 
-1. **效率红利**：Qwen1.5B 量化至 Q4_K_M，体积 2949→940 MiB（-68.1%），生成速度 11.84→34.35 t/s（约 2.9×）。
+1. **效率红利**：Qwen2.5-1.5B 量化至 Q4_K_M，体积 2949→940 MiB（-68.1%），生成速度 11.84→34.35 t/s（约 2.9×）。
 2. **保真度与下游能力存在系统性错配**：PPL/KLD 与 ARC-Easy 呈方向背离（部分档位准确率反升）与幅度背离（KLD 微变而下游无显著差异）；跨词表 KLD 不可比。
-3. **量化正则化效应**（限定 ARC-Easy 全量）：Qwen0.5B 的 Q4_K_M 档 **+15.2pp**（q<0.001，Cohen's h=**0.311**，显著）；Qwen3B **+7.2pp**（q<0.001 但 h=**0.188**，未达 0.2 实质差异阈值，仅边缘证据）；Qwen1.5B 不显著。**该效应未在多步推理任务上复现**（统一 400 题呈单调下降）。
-4. **崩塌区间统计显著**：Qwen1.5B/3B 的 Q2_K 相对 FP16，ARC 差异 q<0.001 且 h=**0.867**（1.5B）/ **2.165**（3B）；KLD 经 Welch t 检验 q<0.001、Cohen's d≥21，2σ 保守校核为 29.2σ / 101.2σ。
+3. **量化正则化效应**（限定 ARC-Easy 全量）：Qwen2.5-0.5B 的 Q4_K_M 档 **+15.2pp**（q<0.001，Cohen's h=**0.311**，显著）；Qwen2.5-3B **+7.2pp**（q<0.001 但 h=**0.188**，未达 0.2 实质差异阈值，仅边缘证据）；Qwen2.5-1.5B 不显著。**该效应未在多步推理任务上复现**（统一 400 题呈单调下降）。
+4. **崩塌区间统计显著**：Qwen2.5-1.5B/3B 的 Q2_K 相对 FP16，ARC 差异 q<0.001 且 h=**0.867**（1.5B）/ **2.165**（3B）；KLD 经 Welch t 检验 q<0.001、Cohen's d≥21，2σ 保守校核为 29.2σ / 101.2σ。
 5. **量化安全边界具模型特异性**：Phi-3-mini 的 Q2_K 未完全崩塌（ARC 0.670，h=0.269）；Llama-3.2-1B 的 Q4_K_M 即显著退化（0.361→0.120，h=0.581），Q2_K 回升至 0.272 但 h=0.191 未达阈值；7B/8B 规模上 Q2_K 仍保有较强韧性（Qwen7B 85.00%）。
 6. **长上下文瓶颈在 KV Cache**：1.5B Q4_K_M 可稳定运行至 256K，峰值 RSS 512→262144 严格线性（**28.05 KB/token**，与理论 28 KB/token 吻合），KV 占用约为权重的 8 倍；同一区间内预填充速度 155.81→19.91 t/s（**-87.2%**）而生成速度 34.08→32.80 t/s（**-3.8%**），说明长上下文瓶颈在内存带宽而非算力。
 
@@ -148,27 +171,62 @@ python scripts/04_plotting/plot_all_final_v3.py      # 重绘论文图表
 | 表1 体积与推理性能 | `results/summary/table2_engineering.csv` |
 | 表2 保真度（PPL/KLD/Same top-p） | `results/summary/table_kld_summary.csv`、`table3_fidelity.csv` |
 | 表3 ARC-Easy（2376，含 q 值、效应量与失败率） | `results/summary/table3_ARC_final.csv`、`table4_downstream_arc.csv`、`table5_stat_final.csv` |
-| 表4 多步推理得分 | `results/summary/table5_reasoning_final_summary.csv`、`table5_reasoning_detail.csv` |
+| 表4 多步推理得分（400 题全量有效响应） | `results/summary/table4_reasoning_full400.csv`；人工评分子集见 `table5_reasoning_final_summary.csv`、`table5_reasoning_detail_human_final.csv` |
 | 表5 关键统计检验 | `results/summary/table5_stat_final.csv` |
 | 表6 跨架构失败模式 | `results/summary/table4_downstream_arc.csv` |
 | 表7 7B/8B 对照 | `results/summary/table7b_kld_summary.csv`、`7b_bench_*.csv`、`llama_8b_*.csv` |
-| 表8 实例级一致性 | `results/summary/table7_ca_kappa_final.csv` |
+| 表5A 双轨交叉判定矩阵（四类区间） | `results/summary/table5A_zone_judgement.csv` |
+| 表8 实例级一致性（ARC 全量交集） | `results/summary/table8_ca_kappa_full.csv` |
 | 表9 长上下文 | `results/raw/ctx/ctx_qwen1.5b_ext.csv`、`ctx_qwen1.5b_speed.csv` |
-| 表10/11 KV Cache、电源模式 | `results/summary/tableA3_kv_cache.csv`、`tableA2_power.csv` |
+| 表10 KV Cache 消融 | `results/summary/tableA3_kv_cache.csv` |
+| 表11 电源 2×2 析因与能耗（J/token） | `results/summary/power_2x2.csv`、`table11_power_energy.csv`；原始读数见 `results/raw/power_log/` |
+| 附录 A.7 表A2/A3（完整统计量） | `results/summary/tableA2_power.csv`、`tableA3_kv_cache.csv` |
 | 双人评分信度 | `results/summary/table_inter_rater_reliability.csv` |
 | 表12/表13、图18 结构化生成 | `results/summary/table_struct_summary_v2.csv`、`table_struct_detail_v2.csv` |
 | 表14、图19 种子稳健性 | `results/summary/table14_seed_stability.csv`、`table_p03_seed_anova.csv` |
 
 ---
 
+## 图 ↔ 脚本对照
+
+| 论文图 | 内容 | 生成脚本 | 状态 |
+|---|---|---|---|
+| 图1 | pp512 / tg128 双轴对比折线图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图2 | 体积–解码速度散点关系图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图3 | 五个模型的峰值内存占用 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图4 | PPL / KLD / Same top-p 三联对比 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图5 | Qwen2.5-1.5B 归一化热力图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图6 | KLD 与 ARC-Easy 双轴折线图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图7 | 跨架构 ARC-Easy 对比柱状图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| **图8** | Qwen2.5-1.5B 多步推理得分矩阵热力图 | **`plot_reasoning_v2.py`** | ✅ 可复现 |
+| **图9** | Qwen2.5-3B 多步推理得分矩阵热力图 | **`plot_reasoning_v2.py`** | ✅ 可复现 |
+| **图10** | 多步推理总准确率柱状图 | **`plot_reasoning_v2.py`** | ✅ 可复现 |
+| **图11** | 7B/8B 保真度与下游能力折线图 | **`plot_7b8b_results.py`** | ✅ 已对齐输出名 |
+| **图12** | 跨架构 7B/8B ARC-Easy 对比图 | **`plot_7b8b_results.py`** | ✅ 已对齐输出名 |
+| **图13** | 实例级一致率（CA）热力图 | **`plot_reasoning_v2.py`** | ✅ 可复现 |
+| 图14 | 长上下文峰值 RSS 折线图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图15 | KV Cache 消融柱状图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图16 | 电源模式对照柱状图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| 图17 | 并发吞吐折线图 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+| **图18** | 结构化生成内容正确率 | **`plot_structured.py`** | ✅ 已对齐输出名 |
+| 图19 | 随机种子稳健性 | 早期脚本（已归档） | ⚠️ 命名已变更 |
+
+> **关于「命名已变更」**：2026-10 早期的绘图脚本采用语义命名（如 `fig08_kv_cache.pdf` → 现为**图15**、`fig13_reason_total_score.pdf` → 现为**图10**），与论文当前的顺序命名（`fig01.png`~`fig19.png`）不一致。这些脚本已归档至 `scripts/04_plotting/_deprecated/`，仍可用于追溯，但**输出文件名需按上表映射后重命名**才能与论文对应。
+>
+> 图8–13、18 的脚本已按论文命名对齐，可直接复现。
+
 ## 复现性要点
 
 - **评测参数**：`temperature=0`、`top_p=1`、`seed=42`；推理 `max_tokens=1024`，下游批量 `256`。
 - **线程**：`llama-bench` 用 `-t 4`；批量下游推理与 PPL/KLD 用 `-t 8`。
 - **KLD**：`--chunks 20`（n=20），以 FP16 输出 logits 为基准；`Same top-p` 报告均值。
-- **统计判定**：ARC 用两比例 z 检验（效应量 Cohen's h），KLD 用 Welch t 检验（Cohen's d），p 值经 BH-FDR 校正；**q<0.05 且 |效应量|≥0.2 方视为实质差异**。2σ 规则（σ_pool 合成）仅作保守校核。
+- **统计判定**：ARC 用两比例 z 检验（效应量 Cohen's h），p 值经 BH-FDR 校正；**q<0.05 且 |效应量|≥0.2 方视为实质差异**。
+- **保真度轨判定**：以 3.3 节 σ_pool 合成标准差规则（|ΔPPL|≥2σ_pool）为**主判据**；因 FP16 基准的 KLD 恒为零、方差为零，KLD 的 Welch t 检验实质退化为「KLD 是否异于零」的单样本检验，其结果为 15 档全部显著，仅作附录 A.8 的敏感性参考，不作主判据。
+- **配对敏感性**：各档位在同一批 ARC-Easy 题目上作答，构成配对设计，附录 A.8 给出 McNemar 精确检验结果；正文表3 仍以边际口径（两比例 z 检验）为准。
+- **区间判定脚本**：`scripts/03_analysis/calc_zone_judge.py` 复现表5A 与附录表A10，输出 `results/summary/table5A_zone_judgement.csv`。
 - **人工评分**：400 题分层抽样（每档 30–50 题），双人独立盲审，加权 Cohen's κ = **0.9989**（95% CI 0.9966–1.0），Krippendorff's α = 0.9972。
 - **上下文**：RSS 测 512~262144（`-c` 逐档，`n=1`）；速度测 4096~131072（`llama-bench -r 1`）；256K 速度未测（单次约 30 分钟）。
+- **电源与能耗**：2×2 析因设计（插电/电池 × 最佳性能/最佳能效），每组 n=5，`llama-bench -p 512 -n 128 -r 5 -t 4`；插电用墙插功率计测整机输入（含适配器约 10~15% 损耗），电池用 BatteryInfoView 读 ACPI 传感器（DC 侧），二者测量点不同、绝对功耗不可直接比较；净能耗 =（稳态负载功耗 − 同模式待机功耗）/ tg128。脚本见 `scripts/01_benchmarks/power_mode_test.py` 与 `scripts/03_analysis/calc_energy_from_log.py`。
 - **一致性核对**：`table_kld_summary.csv` 与 `table3_fidelity.csv` 的 `Same top-p` 为同一来源，已对齐。
 
 ---
@@ -182,6 +240,7 @@ python scripts/04_plotting/plot_all_final_v3.py      # 重绘论文图表
 5. 长上下文测至 256K；512K 未测。检索任务（NIAH）仅在 4K/8K 执行。
 6. Phi-3-mini-4k 原生上下文 4096，不适用于 16K 以上测试。
 7. 上下文速度为单次测量（`-r 1`），未报告标准差；主表小上下文（512）为 `n=5` 均值。
+8. 多步推理原始输出存在服务中断导致的空响应（各档有效响应数不同，最低约 158/400），已由 `clean_reasoning_jsonl.py` 清理空记录并通过修复后的续跑逻辑补测；相关结论以「有效响应」为分母，见附录说明。
 
 ---
 

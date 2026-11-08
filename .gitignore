@@ -19,3 +19,7 @@ Thumbs.db
 # 忽略 Office 临时文件与中间件
 ~$*
 *.tmp
+
+# 忽略本地备份文件
+*.bak
+*.bak_*

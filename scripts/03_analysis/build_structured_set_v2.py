@@ -1,4 +1,4 @@
-﻿# build_structured_set_v2.py
+# build_structured_set_v2.py
 # 结构化生成题库 v2：每题附带 expected（标准答案），支持内容级校验
 # 输出：03_data/structured/struct_80_v2.jsonl
 import json, os, random

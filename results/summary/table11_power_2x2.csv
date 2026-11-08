@@ -1,0 +1,5 @@
+﻿Group,Supply,PerfMode,pp512_mean,pp512_sd,tg128_mean,tg128_sd
+AC_HighPerf,AC,HighPerf,242.15,13.14,33.62,0.17
+AC_Saver,AC,Saver,244.07,17.93,33.12,0.12
+BAT_HighPerf,BAT,HighPerf,237.69,1.3,33.12,0.08
+BAT_Saver,BAT,Saver,174.7,0.78,29.83,0.14

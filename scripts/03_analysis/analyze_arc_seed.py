@@ -1,4 +1,4 @@
-﻿# analyze_arc_seed.py (v2)
+# analyze_arc_seed.py (v2)
 # 修正要点（v1 → v2）：
 #   1) 结论判定以「跨 seed 标准差 SD」为主判据（SD<1pp 视为稳定），ANOVA 仅作参考
 #      —— v1 把 ANOVA p>0.05 与 SD<1 并列，但 n=500 时 ANOVA 过度敏感，易误判

@@ -55,6 +55,6 @@ plt.legend(title="Quantization", loc='lower left')
 plt.grid(axis='y', linestyle='--', alpha=0.5)
 
 plt.tight_layout()
-plt.savefig(os.path.join(fig_dir, "fig_struct_collapse.pdf"))
+plt.savefig(os.path.join(fig_dir, "fig18.png"), dpi=300, bbox_inches="tight")
 plt.close()
-print("✅ 图表已生成: fig_struct_collapse.pdf")
+print("✅ 图表已生成: fig18.png")

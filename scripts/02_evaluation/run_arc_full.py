@@ -29,7 +29,7 @@ def start_server(model_path):
                             creationflags=subprocess.CREATE_NO_WINDOW)
     for _ in range(60):
         try:
-            requests.get(f"http://127.0.0.1:{port}/health", timeout=2)
+            requests.get(f"http://127.0.0.1:{port}/health", timeout=2, proxies={"http": None, "https": None})
             return proc, port
         except:
             time.sleep(1)
@@ -46,8 +46,10 @@ for model_file in models:
         with open(out_file, 'r', encoding='utf-8') as f:
             for line in f:
                 item = json.loads(line)
-                done_ids.add(item["id"])
                 results.append(item)
+                # 修复：仅当 pred 非空时才视为已完成，避免失败记录被永久固化
+                if str(item.get("pred", "")).strip():
+                    done_ids.add(item["id"])
         print(f"  [续跑] {model_file} 已完成 {len(done_ids)} 题。")
 
     if len(done_ids) == len(questions):
@@ -94,7 +96,8 @@ for model_file in models:
             r = requests.post(
                 f"http://127.0.0.1:{port}/v1/completions",
                 json={"prompt": prompt, "max_tokens": max_tokens, "temperature": 0, "top_p": 1, "seed": 42},
-                timeout=60
+                timeout=60,
+                proxies={"http": None, "https": None}  # 防代理干扰
             )
             resp_json = r.json()
             if "choices" in resp_json and len(resp_json["choices"]) > 0:

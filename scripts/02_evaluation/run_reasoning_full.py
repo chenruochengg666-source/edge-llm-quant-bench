@@ -36,7 +36,7 @@ def start_server(model_path):
                             creationflags=subprocess.CREATE_NO_WINDOW)
     for _ in range(90): # 大模型加载慢，等待最多 90 秒
         try:
-            requests.get(f"http://127.0.0.1:{port}/health", timeout=2)
+            requests.get(f"http://127.0.0.1:{port}/health", timeout=2, proxies={"http": None, "https": None})
             return proc, port
         except:
             time.sleep(1)
@@ -51,7 +51,10 @@ for model_file in models:
         with open(out_file, 'r', encoding='utf-8') as f:
             for line in f:
                 try:
-                    done_ids.add(json.loads(line)["id"])
+                    _rec = json.loads(line)
+                    # 修复：仅当 pred 非空时才视为“已完成”，避免失败记录被永久固化
+                    if str(_rec.get("pred", "")).strip():
+                        done_ids.add(_rec["id"])
                 except:
                     pass
         print(f"  [续跑] {model_file} 已完成 {len(done_ids)} 题。")
@@ -83,20 +86,24 @@ for model_file in models:
             prompt = q_text
 
         ans = ""
-        try:
-            # ⚠️ 关键修改：max_tokens 改为 1024，timeout 改为 600秒（10分钟）
-            r = requests.post(
-                f"http://127.0.0.1:{port}/v1/completions",
-                json={"prompt": prompt, "max_tokens": 1024, "temperature": 0, "top_p": 1, "seed": 42},
-                timeout=600,
-                proxies={"http": None, "https": None} # 防代理干扰
-            )
-            resp_json = r.json()
-            if "choices" in resp_json and len(resp_json["choices"]) > 0:
-                ans = resp_json["choices"][0]["text"].strip()
-        except Exception as e:
-            print(f"    [报错] {q['id']} 请求失败: {e}")
-            ans = ""
+        for _attempt in range(1, 4):  # 失败重试 3 次，避免偶发失败被写进空记录
+            try:
+                r = requests.post(
+                    f"http://127.0.0.1:{port}/v1/completions",
+                    json={"prompt": prompt, "max_tokens": 1024, "temperature": 0, "top_p": 1, "seed": 42},
+                    timeout=600,
+                    proxies={"http": None, "https": None}  # 防代理干扰
+                )
+                resp_json = r.json()
+                if "choices" in resp_json and len(resp_json["choices"]) > 0:
+                    ans = resp_json["choices"][0]["text"].strip()
+                if ans:
+                    break
+            except Exception as e:
+                print(f"    [报错] {q['id']} 第{_attempt}次请求失败: {e}")
+                time.sleep(3)
+        if not ans:
+            print(f"    [警告] {q['id']} 三次均无输出，仍记录为失败以便后续续跑重试")
 
         # 提取最后一行“答案：”后的内容
         pred = ""

@@ -1,0 +1,5 @@
+﻿Supply,PerfMode,Config,pp512_mean,pp512_sd,tg128_mean,tg128_sd,Power_W,J_per_token
+AC,HighPerf,AC_HighPerf,242.15,13.14,33.62,0.17,,
+AC,Saver,AC_Saver,244.07,17.93,33.12,0.12,,
+BAT,HighPerf,BAT_HighPerf,237.69,1.3,33.12,0.08,,
+BAT,Saver,BAT_Saver,174.7,0.78,29.83,0.14,,
