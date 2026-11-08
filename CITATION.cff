@@ -1,9 +1,9 @@
 cff-version: 1.2.1
-message: "如果使用了本项目的代码或数据，请引用以下 DOI。"
+message: "如果使用了本项目的代码或数据，请引用以下 DOI。若 Zenodo 归档的版本与最新版开源仓库有所出入，以仓库最新版为准。"
 title: "纯CPU边缘大模型量化评估：能力—工程双轨评测框架与实验代码"
 authors:
   - family-names: "陈"
-    given-names: "若城"
+    given-names: "家瑜"
 version: v1.4.0-paper
 doi: 10.5281/zenodo.23656925
 date-released: 2026-11-08

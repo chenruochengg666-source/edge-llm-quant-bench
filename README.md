@@ -10,7 +10,7 @@
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
 - 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23656925>
-- 对应提交：`e64687bdd0b3dbdf0e4806a3a573b46d12728e19`
+- 对应提交：`72d13b9ea2116767eae34ce1ebcdb6ed0f9fc491`
 
 ## 版本记录
 
@@ -249,12 +249,16 @@ python scripts/04_plotting/plot_all_final_v3.py      # 重绘论文图表
 ```bibtex
 @misc{edge_llm_quant_bench_2026,
   title  = {基于纯 CPU 边缘设备的大模型量化评估：保真度指标失效边界与跨架构实证研究},
-  author = {<作者姓名>},
+  author = {陈家瑜 (Jia-yu CHEN)},
   year   = {2026},
   doi    = {10.5281/zenodo.23656925},
   url    = {https://github.com/chenruocheng666-source/edge-llm-quant-bench}
 }
 ```
+
+> **引用说明**：如果使用了本项目的代码或数据，请引用上述 DOI。若 Zenodo 归档的版本与最新版开源仓库有所出入，**以仓库最新版为准**（仓库持续维护，Zenodo 为阶段性快照）。
+>
+> **Citation notice**: If you use the code or data of this project, please cite the DOI above. Where the Zenodo-archived release differs from the latest repository version, **the latest repository version prevails** (the repository is continuously maintained, while Zenodo provides periodic snapshots).
 
 ## 许可证
 
