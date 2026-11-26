@@ -10,12 +10,13 @@
 - 主仓库（Gitee）：<https://gitee.com/yfddyqcxy/edge-llm-quant-bench>
 - 镜像/归档（GitHub）：<https://github.com/chenruocheng666-source/edge-llm-quant-bench>
 - 论文归档（Zenodo DOI）：<https://doi.org/10.5281/zenodo.23656925>
-- 对应提交：`4f02094f53c54628d4e27c88fe4dd45c7d697d8b`
+- 对应提交：`72d13b9ea2116767eae34ce1ebcdb6ed0f9fc491`
 
 ## 版本记录
 
 | 版本 | 日期 | Zenodo 版本说明 | 主要变更 |
 |---|---|---|---|
+| **v1.5.0-arcc** | 2026-11-25 | 新增 ARC-Challenge 判据复核与噪声对照实验 | 补 ARC-Challenge 全档位（4 模型 × 1172 题）作为第二判据；新增采样温度噪声对照（0.05~1.0 共 8 个温度 × 3 种子 × 2376 题）；修正「量化正则化」表述为「权重层量化误差导致的准确率反升」 |
 | **v1.4.0-paper** | 2026-11-08 | 见下方「v1.4.0 版本说明」 | 补齐多步推理全量（26 档 × 400 题，含 7B/8B）；新增电源 2×2 析因与 J/token 能耗；新增表5A 双轨判定与表8 全量 CA/Kappa；修正 Extra 口径；文献按首引顺序重排至 41 条；修复 6 个脚本 BOM 与续跑缺陷 |
 | v1.3.0 | 2026-10-31 | 文档与图表规范化修订（Documentation and figure normalization） | 论文表格统一为三线表；补充附录A（复现记录、实验环境与补充实验数据）；图01–图19 统一命名与归档；核心实验数据未变动 |
 | v1.2.1 | 2026-10-26 | feat(p04): structured benchmark, figures, and docs sync | 80 题结构化评测（四级指标 + Extra）、图18、统计判定规则统一、README/env/docs 同步 |
@@ -40,6 +41,8 @@
 - [ ] PO-2 imatrix 敏感性
 - [x] **P0-3 多种子复测**：500 题子集 × 6 档位 × 种子 42–46（15 000 次）；FP16/Q4_K_M 种子间 SD ≤ 0.18pp、逐题一致率 ≥ 99.2%，见 `results/summary/table14_seed_stability.csv`、图19
 - [x] **P0-4 结构化生成任务**：80 题（JSON 提取 30 / 表格 25 / 函数调用 25），四级指标（Parseable / Fields / Schema / Content）+ 洁净度（Extra）；见 `results/summary/table_struct_summary_v2.csv`、图18
+- [x] **P0-5 ARC-Challenge 判据复核**：1172 题，4 模型 7 档位；Qwen 系列区间归属完全一致，Llama-1B 沉默区不复现（A 项偏好 75%~86%）
+- [x] **P0-6 噪声对照实验**：FP16 + 采样温度扰动（8 温度 × 3 种子 × 2376 题）；最大正向变化 0.08pp，量化反升 14.90pp，二者差 190 倍
 - [ ] P1-5 Needle 深度扫描
 - [ ] P1-6 安全对齐
 - [ ] P1-7 决策树 + 能力矩阵
@@ -50,7 +53,7 @@
 
 1. **效率红利**：Qwen2.5-1.5B 量化至 Q4_K_M，体积 2949→940 MiB（-68.1%），生成速度 11.84→34.35 t/s（约 2.9×）。
 2. **保真度与下游能力存在系统性错配**：PPL/KLD 与 ARC-Easy 呈方向背离（部分档位准确率反升）与幅度背离（KLD 微变而下游无显著差异）；跨词表 KLD 不可比。
-3. **量化正则化效应**（限定 ARC-Easy 全量）：Qwen2.5-0.5B 的 Q4_K_M 档 **+15.2pp**（q<0.001，Cohen's h=**0.311**，显著）；Qwen2.5-3B **+7.2pp**（q<0.001 但 h=**0.188**，未达 0.2 实质差异阈值，仅边缘证据）；Qwen2.5-1.5B 不显著。**该效应未在多步推理任务上复现**（统一 400 题呈单调下降）。
+3. **准确率反升**（限定 ARC-Easy 全量）：Qwen2.5-0.5B 的 Q4_K_M 档 **+15.2pp**（q<0.001，Cohen's h=**0.311**，显著）；Q2_K 为 +11.0pp。**噪声对照实验表明该反升不由决策层分布扰动解释**——采样温度扰动（0.05~1.0，8 个温度 × 3 种子）带来的最大正向变化仅 0.08pp，与量化反升（14.90pp）相差近 190 倍且方向相反，故归因于权重层的量化误差结构。
 4. **崩塌区间统计显著**：Qwen2.5-1.5B/3B 的 Q2_K 相对 FP16，ARC 差异 q<0.001 且 h=**0.867**（1.5B）/ **2.165**（3B）；KLD 经 Welch t 检验 q<0.001、Cohen's d≥21，2σ 保守校核为 29.2σ / 101.2σ。
 5. **量化安全边界具模型特异性**：Phi-3-mini 的 Q2_K 未完全崩塌（ARC 0.670，h=0.269）；Llama-3.2-1B 的 Q4_K_M 即显著退化（0.361→0.120，h=0.581），Q2_K 回升至 0.272 但 h=0.191 未达阈值；7B/8B 规模上 Q2_K 仍保有较强韧性（Qwen7B 85.00%）。
 6. **长上下文瓶颈在 KV Cache**：1.5B Q4_K_M 可稳定运行至 256K，峰值 RSS 512→262144 严格线性（**28.05 KB/token**，与理论 28 KB/token 吻合），KV 占用约为权重的 8 倍；同一区间内预填充速度 155.81→19.91 t/s（**-87.2%**）而生成速度 34.08→32.80 t/s（**-3.8%**），说明长上下文瓶颈在内存带宽而非算力。
@@ -70,7 +73,13 @@ edge-llm-quant-bench/
 │   │   ├── measure_ctx_speed.ps1   # llama-bench -p 4096~131072，预填充/生成速度
 │   │   ├── measure_rss.ps1         # 单档峰值 RSS
 │   │   └── extract_performance.py  # llama-bench 结果解析
-│   ├── 02_evaluation/        # ARC-Easy / 多步推理 / 结构化生成 / 种子复测
+│   ├── 02_evaluation/        # ARC-Easy / ARC-Challenge / 多步推理 / 结构化 / 种子复测 / 噪声对照
+│   │   ├── arc_challenge/         # ★ v1.5.0 第二判据复核
+│   │   │   ├── prepare_arc_challenge.py   # 下载 ARC-Challenge test（1172 题）
+│   │   │   ├── run_arc_challenge.py       # 全档位评测（含预热/代理规避/续跑）
+│   │   │   └── compare_easy_challenge.py  # 两套判据逐档对照
+│   │   ├── noise_control/         # ★ v1.5.0 噪声对照实验
+│   │   │   └── run_noise_control.py       # 温度梯度扰动（8 温度 × 3 种子 × 2376 题）
 │   │   ├── run_arc_full.py
 │   │   ├── run_arc_seed.py         # 种子 42–46 重复推理（断点续跑 + 原子写盘）
 │   │   ├── run_reasoning_full.py
@@ -89,6 +98,8 @@ edge-llm-quant-bench/
 ├── results/
 │   ├── summary/              # 汇总表（table*.csv，含 table_struct_*_v2）
 │   ├── raw/                  # 原始输出（arc / reasoning / kld / perf / rss / ctx / structured_v2）
+│   │   ├── arc_challenge/        # ★ v1.5.0 ARC-Challenge 逐题结果（4 模型 × 1172 题）
+│   │   └── noise_control/        # ★ v1.5.0 噪声对照逐题结果（8 温度 × 3 种子）
 │   └── legacy/               # 历史版本结果（如 table_stat_tests_legacy.csv）
 ├── figures/                  # 论文图表 PNG（fig01–fig18，_legacy 为历史图）
 ├── docs/                     # 说明文档（如 PO4_structured_v2_notes.md）

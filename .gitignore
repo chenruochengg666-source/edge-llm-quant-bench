@@ -23,3 +23,23 @@ Thumbs.db
 # 忽略本地备份文件
 *.bak
 *.bak_*
+
+# 忽略 Python 环境与工具缓存
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# 忽略脚本运行的临时产物
+*.log
+*.out
+*.err
+
+# 忽略 OS / 编辑器杂项
+*.swp
+*~
+desktop.ini
+
+# 忽略中间结果目录（如需保留，删除本行）
+# results/_tmp/
