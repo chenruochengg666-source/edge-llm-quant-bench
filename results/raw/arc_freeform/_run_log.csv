@@ -1,0 +1,7 @@
+﻿task,model,start,end,minutes,n_done,n_correct,n_qmark,n_empty,protocol
+freeform,qwen0.5b-f16,2026-11-27 22:29:39,2026-11-27 23:35:35,65.9,2376,968,1162,0,freeform_v1: no_constraint + max_tokens64 + T0 + extract_letter + digit_label_fix
+freeform,qwen0.5b-Q4_K_M,2026-11-27 23:35:35,2026-11-28 00:12:40,37.1,2376,1028,965,0,freeform_v1: no_constraint + max_tokens64 + T0 + extract_letter + digit_label_fix
+freeform,qwen1.5b-f16,2026-11-28 13:34:59,2026-11-28 13:35:33,0.6,4,3,0,0,freeform_v1: no_constraint + max_tokens64 + T0 + extract_letter + digit_label_fix
+freeform,qwen1.5b-Q3_K_M,2026-11-28 13:35:33,2026-11-28 14:45:27,69.9,2376,230,2124,0,freeform_v1: no_constraint + max_tokens64 + T0 + extract_letter + digit_label_fix
+freeform,ll32-f16,2026-11-28 14:45:27,2026-11-28 17:07:58,142.5,2376,167,1889,0,freeform_v1: no_constraint + max_tokens64 + T0 + extract_letter + digit_label_fix
+freeform,ll32-Q4_K_M,2026-11-28 17:07:58,2026-11-28 17:55:19,47.4,2376,332,1347,0,freeform_v1: no_constraint + max_tokens64 + T0 + extract_letter + digit_label_fix

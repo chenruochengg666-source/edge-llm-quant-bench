@@ -1,0 +1,3 @@
+﻿Metric,Default_mean,Default_SD,NoRepack_mean,NoRepack_SD,Repack_gain_pct,Paired_t,df,Round_diff_min,Round_diff_max,n_rounds,n_per_setting,Source
+PP_tps,223.7,13.67,225.81,13.37,-0.9,-1.67,5,-5.52,1.98,6,18,speed_repack_interleaved.csv
+TG_tps,29.72,0.46,31.64,0.41,-6.1,-15.32,5,-2.27,-1.52,6,18,speed_repack_interleaved.csv

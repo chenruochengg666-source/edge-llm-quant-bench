@@ -1,0 +1,7 @@
+﻿task,model,start,end,minutes,n_done,n_correct,n_qmark,n_empty,protocol
+challenge,qwen0.5b-f16,2026-11-27 15:32:44,2026-11-27 15:37:41,5.0,1172,437,0,0,unified_v1: constraint_all + max_tokens64 + T0 + extract_letter + digit_label_fix
+challenge,qwen0.5b-Q4_K_M,2026-11-27 15:37:41,2026-11-27 15:43:23,5.7,1172,358,0,0,unified_v1: constraint_all + max_tokens64 + T0 + extract_letter + digit_label_fix
+challenge,qwen0.5b-Q2_K,2026-11-27 15:43:23,2026-11-27 15:46:35,3.2,1172,375,0,0,unified_v1: constraint_all + max_tokens64 + T0 + extract_letter + digit_label_fix
+challenge,phi3-f16,2026-11-28 03:18:22,2026-11-28 04:18:40,60.3,1172,1010,0,0,unified_v1: constraint_all + max_tokens64 + T0 + extract_letter + digit_label_fix
+challenge,phi3-Q4_K_M,2026-11-28 04:18:40,2026-11-28 04:48:10,29.5,1172,1004,0,0,unified_v1: constraint_all + max_tokens64 + T0 + extract_letter + digit_label_fix
+challenge,phi3-Q2_K,2026-11-28 04:48:10,2026-11-28 05:50:17,62.1,1172,555,441,9,unified_v1: constraint_all + max_tokens64 + T0 + extract_letter + digit_label_fix

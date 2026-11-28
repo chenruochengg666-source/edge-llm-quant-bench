@@ -4,9 +4,9 @@ title: "纯CPU边缘大模型量化评估：能力—工程双轨评测框架与
 authors:
   - family-names: "陈"
     given-names: "家瑜"
-version: v1.5.0-arcc
+version: v1.6.0-unified
 doi: 10.5281/zenodo.23656925   # 首次发布版本；后续版本见 Zenodo 页面
-date-released: 2026-11-25
+date-released: 2026-11-28
 license: MIT
 keywords:
   - 大语言模型
@@ -19,4 +19,7 @@ keywords:
   - 判据代表性
   - ARC-Challenge
   - 噪声对照
+  - 评测协议一致性
+  - 沉默区
+  - 选项塌缩
 repository-code: "https://github.com/chenruocheng666-source/edge-llm-quant-bench"

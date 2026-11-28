@@ -11,7 +11,8 @@
 ### ARC-Easy（常识推理，全量 2376）
 - **存放位置**：`data/arc/ARC-Easy-test-full.jsonl`（**仓库不含，需自行下载**）
 - **来源**：[allenai/ai2_arc](https://huggingface.co/datasets/allenai/ai2_arc)（ARC-Easy test split）
-- **评测口径**：本地 `llama-server` OpenAI 兼容接口，`temperature=0`、`top_p=1`、`seed=42`、`n_predict=32`；模型输出首 token 与标准答案选项匹配记 1 分，准确率 = 正确数 / 2376。
+- **评测口径（v1.6.0 统一协议）**：本地 `llama-server` OpenAI 兼容接口，`temperature=0`、`top_p=1`、`seed=42`、`max_tokens=64`；所有档位在题目后追加“只输出一个大写字母 (A/B/C/D)，不要解释，不要输出任何其他内容”；答案按 `extract_letter()` 提取（整段为单个字母 / 开头为字母 / 明确的“答案是 X”句式，其余记为未提取）；题库中以 1~4 标注的答案（ARC-Easy 97 题、ARC-Challenge 22 题）映射为 A~D；准确率 = 正确数 / 2376。
+- **ARC-Challenge（1172 题）**：`data/arc/ARC-Challenge-test-full.jsonl`，由 `scripts/02_evaluation/arc_challenge/prepare_arc_challenge.py` 生成，协议同上。
 - *注：7B/8B 规模使用固定种子抽取的 500 题子集，逐题结果见 `results/raw/arc_7b_subset/`、`results/raw/arc_llama8b_subset/`。*
 
 ## 2. 混合多步推理题库（400 题）
